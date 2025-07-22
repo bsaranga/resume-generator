@@ -7,6 +7,7 @@ import postcss from 'rollup-plugin-postcss';
 import tailwind from '@tailwindcss/postcss';
 import image from '@rollup/plugin-image'
 import process from 'process';
+import json from '@rollup/plugin-json';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -18,6 +19,7 @@ export default {
     sourcemap: true,
   },
   plugins: [
+    json(),
     image(),
     postcss({
       plugins: [tailwind],

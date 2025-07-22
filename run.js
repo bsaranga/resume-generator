@@ -16,7 +16,7 @@ async function generatePDF(url, outputPath) {
   const page = await browser.newPage();
   await page.goto(url);
   await page.waitForFunction(() => document.readyState === 'complete');
-  await page.pdf({ path: outputPath, format: 'A4', printBackground: true, scale: 1.333333 });
+  await page.pdf({ path: outputPath, format: 'A4', printBackground: true, scale: 1.3 });
   await browser.close();
 }
 

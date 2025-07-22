@@ -684,10 +684,8 @@
 	  var _components = _objectSpread2({
 	    h1: "h1"
 	  }, props.components);
-	  return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
-	    children: [jsxRuntimeExports.jsx(Header, {}), "\n", jsxRuntimeExports.jsx(_components.h1, {
-	      children: "HELLO ALL!"
-	    })]
+	  return jsxRuntimeExports.jsx(_components.h1, {
+	    children: "HELLO ALL!^^^"
 	  });
 	}
 	function MDXContent() {
@@ -697,18 +695,6 @@
 	  return MDXLayout ? jsxRuntimeExports.jsx(MDXLayout, _objectSpread2(_objectSpread2({}, props), {}, {
 	    children: jsxRuntimeExports.jsx(_createMdxContent, _objectSpread2({}, props))
 	  })) : _createMdxContent(props);
-	}
-
-	function Header() {
-	  return /*#__PURE__*/React.createElement("div", null, "HEADER");
-	}
-	var components = {
-	  header: Header
-	};
-	function App() {
-	  return /*#__PURE__*/React.createElement(MDXContent, {
-	    components: components
-	  });
 	}
 
 	var client = {exports: {}};
@@ -16762,7 +16748,7 @@
 	var clientExports = requireClient();
 
 	var root = clientExports.createRoot(document.getElementById("root"));
-	root.render(/*#__PURE__*/React.createElement(App, null));
+	root.render(/*#__PURE__*/React.createElement(MDXContent, null));
 
 })();
 //# sourceMappingURL=bundle.js.map

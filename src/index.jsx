@@ -1,6 +1,6 @@
 import React from "react";
-import App from "./App";
+import Resume from './resume.mdx'
 import { createRoot } from "react-dom/client";
 
 const root = createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(<Resume />);

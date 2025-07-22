@@ -6,7 +6,7 @@ const client = new OpenAI({
 
 const completion = await client.chat.completions.create({
   model: 'gemma3',
-  messages: [{ role: 'user', content: 'Why is the sky blue?' }],
+  messages: [{ role: 'user', content: 'In one sentence say why is the sky blue?' }],
 })
 
 console.log(completion.choices[0].message.content)

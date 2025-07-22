@@ -9,7 +9,7 @@ const isProduction = 'production';
 export default {
   input: 'src/index.jsx',
   output: {
-    file: 'bundle.js',
+    file: 'dist/bundle.js',
     format: 'iife', // Suitable for browsers
     sourcemap: true,
   },

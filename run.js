@@ -2,7 +2,7 @@ import process from 'process';
 import puppeteer from 'puppeteer';
 
 const markup = `file://${process.cwd()}/index.html`
-const output = `${process.cwd()}/resume.pdf`;
+const output = `${process.cwd()}/out/resume.pdf`;
 
 async function generatePDF(url, outputPath) {
   const browser = await puppeteer.launch({

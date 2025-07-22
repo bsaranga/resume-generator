@@ -7,7 +7,6 @@ import './index.css';
 
 const root = createRoot(document.getElementById("root"));
 root.render(<Layout>
-    <Resume components={{
-        Header: Header
-    }} />
+    <Header/>
+    <Resume/>
 </Layout>);

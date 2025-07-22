@@ -5,8 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "rollup -c && node ./run.js",
-    "start": "rollup -c --watch"
+    "build": "NODE_ENV=production rollup -c && node ./run.js",
+    "start": "NODE_ENV=development rollup -c --watch"
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,7 @@
     "@rollup/plugin-image": "^3.0.3",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-replace": "^6.0.2",
+    "@tailwindcss/typography": "^0.5.16",
     "rollup": "^4.45.1",
     "rollup-plugin-postcss": "^4.0.2"
   }

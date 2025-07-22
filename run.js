@@ -23,3 +23,5 @@ async function generatePDF(url, outputPath) {
 generatePDF(markup, output)
   .then(() => console.log('PDF generated successfully'))
   .catch(err => console.error('Error generating PDF:', err));
+
+  process.env.NODE_ENV = 'development';

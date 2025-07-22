@@ -6,8 +6,9 @@ import mdx from '@mdx-js/rollup';
 import postcss from 'rollup-plugin-postcss';
 import tailwind from '@tailwindcss/postcss';
 import image from '@rollup/plugin-image'
+import process from 'process';
 
-const isProduction = false;
+const isProduction = process.env.NODE_ENV === 'production';
 
 export default {
   input: 'src/index.jsx',

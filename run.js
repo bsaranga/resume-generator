@@ -1,13 +1,21 @@
-const path = require('path');
-const puppeteer = require('puppeteer');
+import process from 'process';
+import puppeteer from 'puppeteer';
 
-const markup = `file://${path.join(__dirname, 'index.html')}`
-const output = path.join(__dirname, 'output.pdf');
+const markup = `file://${process.cwd()}/index.html`
+const output = `${process.cwd()}/resume.pdf`;
 
 async function generatePDF(url, outputPath) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: [
+      '--disable-web-security', // Disables CORS and other web security features
+      '--user-data-dir=/tmp/puppeteer_temp', // Required to avoid profile conflicts
+      '--no-sandbox',
+      '--disable-setuid-sandbox'
+    ],
+  });
   const page = await browser.newPage();
   await page.goto(url);
+  await page.waitForFunction(() => document.readyState === 'complete');
   await page.pdf({ path: outputPath, format: 'A4' });
   await browser.close();
 }

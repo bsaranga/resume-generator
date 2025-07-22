@@ -1,7 +1,13 @@
 import React from "react";
+import Header from "./components/header";
 import Resume from './resume.mdx'
-import Output from '../output.md';
 import { createRoot } from "react-dom/client";
+import Layout from "./components/layout";
+import './index.css';
 
 const root = createRoot(document.getElementById("root"));
-root.render(<Output />);
+root.render(<Layout>
+    <Resume components={{
+        Header: Header
+    }} />
+</Layout>);

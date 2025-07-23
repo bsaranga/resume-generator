@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 import process from "process";
 import { writeFileSync, appendFileSync, readFileSync } from "fs";
-import { __dirname } from "../utils.js";
+import { __dirname } from "../src/utils.js";
 
 const prompt_template = readFileSync(`${__dirname}/agents/prompts/cv_gen.prompt`, "utf8");
 

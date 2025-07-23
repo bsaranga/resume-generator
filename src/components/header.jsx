@@ -1,10 +1,9 @@
-import headshot from '../assets/headshot.png';
 import data from '../../data/header.json';
 
 export default function Header() {
   return (
     <div className="flex gap-2">
-      <img className="w-20 h-20" src={headshot} alt="headshot" />
+      <img className="w-20 h-20" src={data.headshot} alt="headshot" />
       <div className='flex flex-col'>
         <div className='font-medium text-lg'>{data.fullname}</div>
         <div className='text-sm'>{data.currentPosition}</div>

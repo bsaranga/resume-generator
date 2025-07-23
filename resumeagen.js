@@ -4,21 +4,26 @@ import process from 'process';
 import puppeteer from 'puppeteer';
 import { execSync } from 'child_process';
 import { generateResume } from './agents/resume_rewriter.js';
-import { __dirname } from './path.js';
+import { __dirname } from './utils.js';
 
-const args = process.argv.slice(2);
-let contextPath = null;
-let jobDescriptionPath = null;
+function parseArgs() {
+  const args = process.argv.slice(2);
+  let contextPath = null;
+  let jobDescriptionPath = null;
 
-for (let i = 0; i < args.length; i++) {
-  if (args[i] === '--context' && args[i + 1]) {
-    contextPath = path.resolve(args[i + 1]);
-    i++;
-  } else if (args[i] === '--job-description' && args[i + 1]) {
-    jobDescriptionPath = path.resolve(args[i + 1]);
-    i++;
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--context' && args[i + 1]) {
+      contextPath = path.resolve(args[i + 1]);
+      i++;
+    } else if (args[i] === '--job-description' && args[i + 1]) {
+      jobDescriptionPath = path.resolve(args[i + 1]);
+      i++;
+    }
   }
+  return [contextPath, jobDescriptionPath];
 }
+
+const [contextPath, jobDescriptionPath] = parseArgs();
 
 console.log('Context Path:', contextPath);
 console.log('Job Description Path:', jobDescriptionPath);
@@ -46,7 +51,10 @@ generateResume(contextPath, jobDescriptionPath).then(() => {
     });
     const page = await browser.newPage();
     await page.goto(url);
-    await page.waitForFunction(() => document.readyState === 'complete');
+    await page.waitForFunction(() => {
+      const imgs = Array.from(document.images);
+      return imgs.length === 0 || imgs.every(img => img.complete);
+    });
     await page.pdf({ path: outputPath, format: 'A4', printBackground: true, scale: 1.22 });
     await browser.close();
   }

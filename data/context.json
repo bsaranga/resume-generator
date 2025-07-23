@@ -1,8 +1,10 @@
 {
     "$schema": "https://raw.githubusercontent.com/bsaranga/resumeagen/refs/heads/main/schema/context.json",
-    "current_position": "Senior Full Stack Developer",
-    "seeking_position": "Associate Technical Lead or Technical Lead",
-    "applicant_summary": "Highly experienced full-stack senior developer with 6 years of experience in .NET, C#, and Angular. Proven track record in delivering high-quality software solutions and leading development teams. Strong problem-solving skills and a passion for technology. Language agnostic mindset that enables quick adaptation to new technologies and frameworks. Expertise in building scalable web applications and RESTful APIs. Excellent communication skills and a team player who thrives in collaborative environments. Advocate of test driven development and agile methodologies. Firm believer of the product engineering manifesto, and a contributor to the product engineering repository.",
+    "metadata": {
+        "current_position": "Senior Full Stack Developer",
+        "seeking_position": "Associate Technical Lead or Technical Lead",
+        "applicant_summary": "Highly experienced full-stack senior developer with 6 years of experience in .NET, C#, and Angular. Proven track record in delivering high-quality software solutions and leading development teams. Strong problem-solving skills and a passion for technology. Language agnostic mindset that enables quick adaptation to new technologies and frameworks. Expertise in building scalable web applications and RESTful APIs. Excellent communication skills and a team player who thrives in collaborative environments. Advocate of test driven development and agile methodologies. Firm believer of the product engineering manifesto, and a contributor to the product engineering repository."
+    },
     "technical_skills": {
         "programming_languages": ["C#", "JavaScript", "TypeScript", "Python", "Java", "SQL(T-SQL, P-SQL)", "C", "C++"],
         "frameworks_and_technologies": [".NET", ".NET Core", "ASP.NET", "Angular", "React", "Node.js", "Express.js", "Fast API", "Vue.js", "NestJS", "Next.js", "ASP.NET CORE", "Entity Framework", "GraphQL", "RESTful APIs"],

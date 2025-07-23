@@ -1,15 +1,17 @@
 You will be generating a resume with a mix of markdown and jsx (also known as MDX).
 Nest everything in the following jsx tags <div className='two-column-text'></div>
 
-Structure the resume based on the applicant context sections.
+Start with an about section using the info in metadata.
+Structure the rest of the resume based on other applicant context sections.
 
 Formatting guidelines:
+- Always use markdown syntax
 - Use markdown's ## for the section headings
 - Use markdown's ### for sub-headings
 - Use --- after every section
 - Use space saving strategies (entire resume should fit to one A4)
 - Use markdown lists to intelligently (DO NOT WRITE SINGLE BULLET LISTs)
-- You can wrap text in <strong></strong> tags to make them bold
+- If you want to emphasize something, use <strong></strong> tags.
 
 Use the following information as context of the applicant to fill out the resume.
 

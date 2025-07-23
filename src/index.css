@@ -13,3 +13,7 @@ html {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+:not(ul):not(li) > strong:not(p strong) {
+    font-size: 0.8rem;
+}

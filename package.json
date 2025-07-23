@@ -1,7 +1,7 @@
 {
-  "name": "resume",
-  "version": "1.0.0",
-  "description": "",
+  "name": "resumeagen",
+  "version": "1.0.1",
+  "description": "LLM powered resume generator",
   "type": "module",
   "main": "index.js",
   "bin": {
@@ -19,9 +19,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bsaranga/resume/issues"
+    "url": "https://github.com/bsaranga/resumeagen/issues"
   },
-  "homepage": "https://github.com/bsaranga/resume#readme",
+  "homepage": "https://github.com/bsaranga/resumeagen#readme",
   "dependencies": {
     "@mdx-js/rollup": "^3.1.0",
     "@tailwindcss/postcss": "^4.1.11",

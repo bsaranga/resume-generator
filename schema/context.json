@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Developer Resume Schema",
+  "type": "object",
+  "properties": {
+    "applicant_summary": { "type": "string" },
+    "technical_skills": {
+      "type": "object",
+      "properties": {
+        "programming_languages": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "frameworks_and_technologies": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "databases": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "tools_and_technologies": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "cloud_platforms": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": [
+        "programming_languages",
+        "frameworks_and_technologies",
+        "databases",
+        "tools_and_technologies",
+        "cloud_platforms"
+      ],
+      "additionalProperties": true
+    },
+    "work_experience": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "company": { "type": "string" },
+          "position": { "type": "string" },
+          "duration": { "type": "string" },
+          "responsibilities": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["company", "position", "duration", "responsibilities"],
+        "additionalProperties": true
+      }
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "degree": { "type": "string" },
+          "institution": { "type": "string" },
+          "duration": { "type": "string" },
+          "details": { "type": "string" }
+        },
+        "required": ["degree", "institution", "duration", "details"]
+      }
+    },
+    "personal_projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "link": { "type": "string", "format": "uri" }
+        },
+        "required": ["title", "description", "link"]
+      }
+    },
+    "continuous_education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "provider": { "type": "string" },
+          "description": { "type": "string" }
+        },
+        "required": ["title", "provider", "description"]
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "position": { "type": "string" },
+          "email": { "type": "string", "format": "email" },
+          "phone": { "type": "string" }
+        },
+        "required": ["name", "position", "email"]
+      }
+    }
+  },
+  "required": [
+    "applicant_summary",
+    "technical_skills",
+    "work_experience",
+    "education",
+    "personal_projects",
+    "continuous_education",
+    "references"
+  ],
+  "additionalProperties": true
+}

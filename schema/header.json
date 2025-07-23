@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Personal Information Schema",
+  "type": "object",
+  "properties": {
+    "fullname": { "type": "string" },
+    "currentPosition": { "type": "string" },
+    "website": { "type": "string", "format": "uri" },
+    "linkedIn": { "type": "string", "format": "uri" },
+    "github": { "type": "string", "format": "uri" },
+    "email": { "type": "string", "format": "email" },
+    "phone": { "type": "string" },
+    "address": { "type": "string" }
+  },
+  "required": [
+    "fullname",
+    "currentPosition",
+    "email"
+  ],
+  "additionalProperties": true
+}

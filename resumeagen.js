@@ -1,9 +1,10 @@
 #!/usr/bin/env node
+import path from 'path';
 import process from 'process';
 import puppeteer from 'puppeteer';
-import { generateResume } from './agents/resume_rewriter.js';
-import path from 'path';
 import { execSync } from 'child_process';
+import { generateResume } from './agents/resume_rewriter.js';
+import { __dirname } from './path.js';
 
 const args = process.argv.slice(2);
 let contextPath = null;
@@ -25,13 +26,13 @@ console.log('Job Description Path:', jobDescriptionPath);
 generateResume(contextPath, jobDescriptionPath).then(() => {
 
   try {
-    execSync('npm run build', { stdio: 'inherit' });
+    execSync('npm run build', { stdio: 'inherit', cwd: __dirname });
   } catch (err) {
     console.error('Error running npm build:', err);
     process.exit(1);
   }
 
-  const markup = `file://${process.cwd()}/index.html`
+  const markup = `file://${__dirname}/index.html`
   const output = `${process.cwd()}/resume.pdf`;
 
   async function generatePDF(url, outputPath) {
@@ -53,8 +54,7 @@ generateResume(contextPath, jobDescriptionPath).then(() => {
   generatePDF(markup, output)
     .then(() => console.log(`PDF generated successfully: ${output}`))
     .catch(err => console.error('Error generating PDF:', err));
-
-    process.env.NODE_ENV = 'development';
+    //process.env.NODE_ENV = 'development'; // enable during development
 }).catch(err => {
   console.error('Error generating resume:', err);
   process.exit(1);

@@ -1,17 +1,18 @@
 import OpenAI from "openai";
 import process from "process";
 import { writeFileSync, appendFileSync, readFileSync } from "fs";
+import { __dirname } from "../path.js";
 
-const prompt_template = readFileSync(`${process.cwd()}/agents/prompts/cv_gen.prompt`, "utf8");
+const prompt_template = readFileSync(`${__dirname}/agents/prompts/cv_gen.prompt`, "utf8");
 
 export async function generateResume(contextPath = null, jobDescriptionPath = null) {
   
   if (!contextPath) {
-    contextPath = `${process.cwd()}/data/context.json`;
+    contextPath = `${__dirname}/data/context.json`;
   }
 
   if (!jobDescriptionPath) {
-    jobDescriptionPath = `${process.cwd()}/data/job_description.md`;
+    jobDescriptionPath = `${__dirname}/data/job_description.md`;
   }
 
   const context = readFileSync(contextPath, "utf8");
@@ -33,7 +34,7 @@ export async function generateResume(contextPath = null, jobDescriptionPath = nu
     stream: true
   });
 
-  const outputFile = `${process.cwd()}/src/resume.mdx`;
+  const outputFile = `${__dirname}/src/resume.mdx`;
   writeFileSync(outputFile, "");
 
   for await (const chunk of stream) {

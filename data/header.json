@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/bsaranga/resumeagen/refs/heads/main/schema/header.json",
     "fullname": "Saranga B",
     "currentPosition": "Senior Software Engineer (Full Stack) — Nagarro",
     "website": "https://saranga.dev",

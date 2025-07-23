@@ -1,66 +1,15 @@
 You will be generating a resume with a mix of markdown and jsx (also known as MDX).
 Nest everything in the following jsx tags <div className='two-column-text'></div>
 
-The resume will have the following structure:
-Sections: 
-    - About
-    - Technical Skill Set (Categorized)
-    - Work Experience
-    - Education
-    - Personal Projects
-    - Continuous Education
-    - References
+Structure the resume based on the applicant context sections.
 
 Formatting guidelines:
 - Use markdown's ## for the section headings
+- Use markdown's ### for sub-headings
 - Use --- after every section
-
-The Technical Skill Set section will be a categorized description of my skills. Based on the given context
-choose which skills to be used and categorize them as fit. Example, programming languages should be one
-category named "Programming Languages". The actual skills (languages in the case of the example), should be
-enlisted in a single line to save space.
-
-Use the following markdown format for Technical Skill Set:
-```markdown
-### Programming Languages
-C#, TypeScript, SQL, Python, etc, etc
-
-### Frontend Frameworks / Tools
-React, Next.js, Redux, Zustand, TailwindCSS, etc, etc
-
-```
-
-Use the following markdown format for Work Experience Section:
-```markdown
-### **Position Held** — Company, Country
-
-*Start Date – End Date*
-
-* Things you did that counts as experience.
-* More things you did that counts as experience.
-* Even more things you did that counts as experience.
-```
-
-Use the following markdown format for Education Section:
-```markdown
-### Institution – Qualification acheived
-(*Short description*)
-
-### Institution – Qualification acheived
-(*Short description*)
-
-### Institution – Qualification acheived
-(*Short description*)
-```
-
-Use the following markdown format for the Personal Projects section:
-```markdown
-- [Project Name](Link) — description
-
-- <strong>Project Nane</strong> — description
-```
-
-Use markdown lists as appropriate for other sections.
+- Use space saving strategies (entire resume should fit to one A4)
+- Use markdown lists to intelligently (DO NOT WRITE SINGLE BULLET LISTs)
+- You can wrap text in <strong></strong> tags to make them bold
 
 Use the following information as context of the applicant to fill out the resume.
 

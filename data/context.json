@@ -1,5 +1,7 @@
 {
     "$schema": "https://raw.githubusercontent.com/bsaranga/resumeagen/refs/heads/main/schema/context.json",
+    "current_position": "Senior Full Stack Developer",
+    "seeking_position": "Associate Technical Lead or Technical Lead",
     "applicant_summary": "Highly experienced full-stack senior developer with 6 years of experience in .NET, C#, and Angular. Proven track record in delivering high-quality software solutions and leading development teams. Strong problem-solving skills and a passion for technology. Language agnostic mindset that enables quick adaptation to new technologies and frameworks. Expertise in building scalable web applications and RESTful APIs. Excellent communication skills and a team player who thrives in collaborative environments. Advocate of test driven development and agile methodologies. Firm believer of the product engineering manifesto, and a contributor to the product engineering repository.",
     "technical_skills": {
         "programming_languages": ["C#", "JavaScript", "TypeScript", "Python", "Java", "SQL(T-SQL, P-SQL)", "C", "C++"],
@@ -75,6 +77,11 @@
             "title": "LearnTree AI",
             "description": "A closed-source generative AI app that builds interactive, human-readable knowledge graphs.",
             "link": "https://learntree.ai"
+        },
+        {
+            "title": "Contributor for the Product Engineering Manifesto",
+            "description": "A manifesto advocating for product engineering principles, emphasizing quality and collaboration.",
+            "link": "https://github.com/anttiviljami/product-engineer-manifesto"
         }
     ],
     "continuous_education": [

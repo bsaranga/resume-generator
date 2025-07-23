@@ -1,0 +1,120 @@
+{
+    "applicant_summary": "Highly experienced full-stack senior developer with 6 years of experience in .NET, C#, and Angular. Proven track record in delivering high-quality software solutions and leading development teams. Strong problem-solving skills and a passion for technology. Language agnostic mindset that enables quick adaptation to new technologies and frameworks. Expertise in building scalable web applications and RESTful APIs. Excellent communication skills and a team player who thrives in collaborative environments. Advocate of test driven development and agile methodologies. Firm believer of the product engineering manifesto, and a contributor to the product engineering repository.",
+    "technical_skills": {
+        "programming_languages": ["C#", "JavaScript", "TypeScript", "Python", "Java", "SQL(T-SQL, P-SQL)", "C", "C++"],
+        "frameworks_and_technologies": [".NET", ".NET Core", "ASP.NET", "Angular", "React", "Node.js", "Express.js", "Fast API", "Vue.js", "NestJS", "Next.js", "ASP.NET CORE", "Entity Framework", "GraphQL", "RESTful APIs"],
+        "databases": ["SQL Server", "PostgreSQL", "MySQL", "MongoDB", "Redis", "Neo4j"],
+        "tools_and_technologies": ["Docker", "Kubernetes", "Git", "Jenkins", "Azure DevOps", "AWS", "GCP", "Terraform", "GraphQL", "RESTful APIs", "Microservices", "CI/CD", "Agile methodologies", "Scrum", "Kanban", "Test Driven Development (TDD)", "Behavior Driven Development (BDD)", "Unit Testing", "Integration Testing", "End-to-End Testing"],
+        "cloud_platforms": ["AWS", "Azure", "Google Cloud Platform (GCP)"]
+    },
+    "work_experience": [
+        {
+            "company": "Nagarro, Sri Lanka",
+            "position": "Senior Engineer (Full Stack)",
+            "duration": "Dec 2023 - Present",
+            "responsibilities": [
+                "Led the modernization of SPAs from legacy technologies (Knockout.js) to modern React.js frameworks, driving improved performance and maintainability.",
+                "Migrated legacy ASP.NET Core applications to microservices architecture on .NET 8+, focusing on scalability and resilience.",
+                "Provisioned Azure infrastructure using Terraform and implemented CI/CD pipelines with GitHub Actions + Azure DevOps, ensuring automated deployments.",
+                "Contributed to the development of WiX/MSI installers for desktop/server environments.",
+                "Actively participated in code reviews, documentation, and team knowledge sharing, promoting best practices."
+            ]
+        },
+        {
+            "company": "Zone24x7, Sri Lanka",
+            "position": "Software Engineer (Full Stack)",
+            "duration": "Feb 2020 - Dec 2023",
+            "responsibilities": [
+                "Developed a custom ETL system using Hangfire and SignalR for real-time data feedback, demonstrating experience with scalable communication architectures.",
+                "Led the migration of an Angular application to the latest version, applying strong technical leadership and resolving compatibility issues.",
+                "Designed and implemented a Postman test suite, automating testing and significantly reducing QA hours.",
+                "Implemented a RabbitMQ-based communication system alongside an HTTP sync tool, showcasing experience with asynchronous messaging.",
+                "Utilized Webpack and Terser to optimize JavaScript assets, achieving a 50% size reduction – highlighting optimization skills.",
+                "Mentored junior developers and interns, fostering a collaborative and growth-oriented team environment."
+            ]
+        },
+        {
+            "company": "Self Employed, Sri Lanka",
+            "position": "Freelance Software Engineer",
+            "duration": "Jan 2018 - Feb 2020",
+            "responsibilities": [
+                "Developed tools for 2D/3D content creation in Python and MEL, using advanced technologies.",
+                "Created After Effects plugins utilizing ActionScript, showcasing adaptability and diverse skills.",
+                "Developed particle simulations for motion graphics, reflecting problem-solving skills and technical expertise."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "B.Sc (Hons) in Computer Science",
+            "institution": "Kingston University, UK",
+            "duration": "2020 - 2023",
+            "details": "Graduated with Second Class Honours, specializing in software engineering and web"
+        },
+        {
+            "degree": "Software Engineering Bootcamp Certification",
+            "institution": "SLTC, Sri Lanka",
+            "duration": "2019 - 2020",
+            "details": "SLASSCOM backed intensive bootcamp focusing on full-stack development, covering both front-end and back-end technologies."
+        },
+        {
+            "degree": "Secondary School Completion",
+            "institution": "Colombo South International College, Sri Lanka",
+            "duration": "1999 - 2011",
+            "details": "Scored BBB in GCE London A/L, Maths, Chemistry, and Physics."
+        }
+    ],
+    "personal_projects": [
+        {
+            "title": "Payload Injection Filter",
+            "description": "A reusable ASP.NET Core middleware filter that short-circuits malicious requests using regex.",
+            "link": "https://github.com/bsaranga/PayloadInjectionFilter"
+        },
+        {
+            "title": "LearnTree AI",
+            "description": "A closed-source generative AI app that builds interactive, human-readable knowledge graphs.",
+            "link": "https://learntree.ai"
+        }
+    ],
+    "continuous_education": [
+        {
+            "title": "Microsoft Certified: Azure Fundamentals AZ-900",
+            "provider": "Microsoft / Pearson",
+            "description": "Earned the Microsoft Certified: Azure Fundamentals certification, demonstrating foundational knowledge of cloud concepts and Azure services."
+        },
+        {
+            "title": "Mathematics for Machine Learning",
+            "provider": "Deeplearning.ai / Coursera",
+            "description": "Successfully completed Mathematics for Machine Learning specialization."
+        },
+        {
+            "title": "Cryptography and Information Theory",
+            "provider": "University of Colorado / Coursera",
+            "description": "Learned the basic tenets of cryptography and information theory."
+        },
+        {
+            "title": "6.00.1x: Introduction to Computer Science and Programming Using Python",
+            "provider": "MITx / EdX",
+            "description": "Gained significant exposure to algorithms, data structures, and computational thinking using Python."
+        }
+    ],
+    "references": [
+        {
+            "name": "Azmeer Mohammed",
+            "position": "Head, Department of Multimedia (SLTC)",
+            "email": "azmeerm@gmail.com",
+            "phone": "+94 77 734 8691"  
+        },
+        {
+            "name": "Chathuranga Wijeratna",
+            "position": "Director of Technology (Nagarro)",
+            "email": "cwijeratna@yahoo.com"
+        },
+        {
+            "name": "Chathuranganie Pathirage",
+            "position": "Associate Software Architect (Zone24x7)",
+            "email": "chathu03j@yahoo.com",
+            "phone": "+94 77 906 9494"
+        }
+    ]
+}

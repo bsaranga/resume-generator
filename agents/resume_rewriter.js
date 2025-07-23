@@ -2,29 +2,44 @@ import OpenAI from "openai";
 import process from "process";
 import { writeFileSync, appendFileSync, readFileSync } from "fs";
 
-const current_resume = readFileSync(`${process.cwd()}/in/current_resume.md`, "utf8");
-const job_description = readFileSync(`${process.cwd()}/in/job_description.md`, "utf8");
+const prompt_template = readFileSync(`${process.cwd()}/agents/prompts/cv_gen.prompt`, "utf8");
 
-const client = new OpenAI({
-    baseURL: "http://localhost:11434/v1",
-    apiKey: "ollama"
-});
+export async function generateResume(contextPath = null, jobDescriptionPath = null) {
+  
+  if (!contextPath) {
+    contextPath = `${process.cwd()}/data/context.json`;
+  }
 
-const stream = await client.chat.completions.stream({
-  model: 'gemma3',
-  messages: [
-    { role: 'system', content: "You're a resume generator that takes in an existing resume and a job description, and outputs a new resume that targets the job description using the info from the existing resume" },
-    { role: 'user', content: `Here's the context you need, make sure to only output the modified resume. Don't write an intro. Don't write a summary. Context\n\nExisting resume: """\n${current_resume}\n"""\n\nJob Description: """\n${job_description}\n"""` }
-  ],
-  stream: true
-});
+  if (!jobDescriptionPath) {
+    jobDescriptionPath = `${process.cwd()}/data/job_description.md`;
+  }
 
-writeFileSync("output.md", "");
+  const context = readFileSync(contextPath, "utf8");
+  const job_description = readFileSync(jobDescriptionPath, "utf8");
 
-for await (const chunk of stream) {
-  process.stdout.write(chunk.choices[0].delta.content);
-  // Write chunks to a file
-  appendFileSync("output.md", chunk.choices[0].delta.content);
+  let prompt = prompt_template.replace("%APPLICANT_CONTEXT%", context);
+  prompt = prompt.replace("%JOB_DESCRIPTION%", job_description);
+
+  console.log("Generating resume...");
+
+  const client = new OpenAI();
+
+  const stream = await client.chat.completions.stream({
+    model: 'gpt-4.1',
+    messages: [
+      { role: 'system', content: "You're a resume generator that writes an optimized resume for a given job description and candidate context. You use a flavor of markdown and jsx, also known as MDX." },
+      { role: 'user', content: prompt }
+    ],
+    stream: true
+  });
+
+  const outputFile = `${process.cwd()}/src/resume.mdx`;
+  writeFileSync(outputFile, "");
+
+  for await (const chunk of stream) {
+    if (chunk.choices[0].delta.content != undefined) {
+      process.stdout.write(chunk.choices[0].delta.content);
+      appendFileSync(outputFile, chunk.choices[0].delta.content);
+    }
+  }
 }
-
-console.log("\nDone!");

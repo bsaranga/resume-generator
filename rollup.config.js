@@ -30,7 +30,7 @@ export default {
       preventAssignment: true, // Prevents accidental assignment to process.env
     }),
     nodeResolve({
-      extensions: ['.js', '.jsx'],
+      extensions: ['.js', '.jsx', '.json', '.md', '.mdx'],
     }),
     commonjs(),
     mdx(),

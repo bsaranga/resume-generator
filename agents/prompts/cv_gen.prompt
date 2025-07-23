@@ -1,0 +1,84 @@
+You will be generating a resume with a mix of markdown and jsx (also known as MDX).
+Nest everything in the following jsx tags <div className='two-column-text'></div>
+
+The resume will have the following structure:
+Sections: 
+    - About
+    - Technical Skill Set (Categorized)
+    - Work Experience
+    - Education
+    - Personal Projects
+    - Continuous Education
+    - References
+
+Formatting guidelines:
+- Use markdown's ## for the section headings
+- Use --- after every section
+
+The Technical Skill Set section will be a categorized description of my skills. Based on the given context
+choose which skills to be used and categorize them as fit. Example, programming languages should be one
+category named "Programming Languages". The actual skills (languages in the case of the example), should be
+enlisted in a single line to save space.
+
+Use the following markdown format for Technical Skill Set:
+```markdown
+### Programming Languages
+C#, TypeScript, SQL, Python, etc, etc
+
+### Frontend Frameworks / Tools
+React, Next.js, Redux, Zustand, TailwindCSS, etc, etc
+
+```
+
+Use the following markdown format for Work Experience Section:
+```markdown
+### **Position Held** — Company, Country
+
+*Start Date – End Date*
+
+* Things you did that counts as experience.
+* More things you did that counts as experience.
+* Even more things you did that counts as experience.
+```
+
+Use the following markdown format for Education Section:
+```markdown
+### Institution – Qualification acheived
+(*Short description*)
+
+### Institution – Qualification acheived
+(*Short description*)
+
+### Institution – Qualification acheived
+(*Short description*)
+```
+
+Use the following markdown format for the Personal Projects section:
+```markdown
+- [Project Name](Link) — description
+
+- <strong>Project Nane</strong> — description
+```
+
+Use markdown lists as appropriate for other sections.
+
+Use the following information as context of the applicant to fill out the resume.
+
+```applicant context
+%APPLICANT_CONTEXT%
+```
+
+Use the following job description to tailor the resume. Transform the applicant information in
+such a way that it guarantees a short-selection. Be clever and use appropriate phrasing that elevates the candidate
+and makes the candidate appear as a best fit.
+
+```job description
+%JOB_DESCRIPTION%
+```
+
+IMPORTANT:
+1. Keep the "About" section concise and to the point.
+2. Use the most relevant selection of technical skills from the given applicant context.
+3. Summarize each work experience to 3 points highlighting the most important contributions.
+4. Feel free to tweak the phrasing of work experience details to tailor the job description.
+5. Use good ATS-friendly keywords when describing my work-experience.

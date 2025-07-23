@@ -1,53 +1,62 @@
 #!/usr/bin/env node
-import path from 'path';
 import process from 'process';
-import puppeteer from 'puppeteer';
 import { execSync } from 'child_process';
-import { generateResume } from './agents/resume_rewriter.js';
 import { __dirname } from './src/utils.js';
-import { parseArgs } from './src/cli_helpers.js';
+import { generateResume } from './src/agents/resume_rewriter.js';
+import { generatePDF } from './src/generators.js';
 
-const [contextPath, jobDescriptionPath] = parseArgs();
+import chalk from 'chalk';
+import { program  } from 'commander';
+import { input } from '@inquirer/prompts';
 
-console.log('Context Path:', contextPath);
-console.log('Job Description Path:', jobDescriptionPath);
+const ascii_art = `
+██████╗ ███████╗███████╗██╗   ██╗███╗   ███╗███████╗ █████╗  ██████╗ ███████╗███╗   ██╗
+██╔══██╗██╔════╝██╔════╝██║   ██║████╗ ████║██╔════╝██╔══██╗██╔════╝ ██╔════╝████╗  ██║
+██████╔╝█████╗  ███████╗██║   ██║██╔████╔██║█████╗  ███████║██║  ███╗█████╗  ██╔██╗ ██║
+██╔══██╗██╔══╝  ╚════██║██║   ██║██║╚██╔╝██║██╔══╝  ██╔══██║██║   ██║██╔══╝  ██║╚██╗██║
+██║  ██║███████╗███████║╚██████╔╝██║ ╚═╝ ██║███████╗██║  ██║╚██████╔╝███████╗██║ ╚████║
+╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝
+                                                                                       
+`
 
-generateResume(contextPath, jobDescriptionPath).then(() => {
+program
+  .name('resumeagen')
+  .description('AI powered resume generator tailored to job descriptions')
+  .version('1.0.0')
+  .addHelpText('before', chalk.greenBright(ascii_art));
 
-  try {
-    execSync('npm run build', { stdio: 'inherit', cwd: __dirname });
-  } catch (err) {
-    console.error('Error running npm build:', err);
-    process.exit(1);
-  }
+program
+  .command('generate')
+  .description('Generate a resume based on the provided context and job description')
+  .argument('<contextPath>', 'Path to the context file (e.g., resume.json)')
+  .argument('<jobDescriptionPath>', 'Path to the job description file (e.g., job_description.json)')
+  .action(async (contextPath, jobDescriptionPath) => {
+      try {
+        generateResume(contextPath, jobDescriptionPath).then(() => {
 
-  const markup = `file://${__dirname}/index.html`
-  const output = `${process.cwd()}/resume.pdf`;
+          try {
+            execSync('npm run build', { stdio: 'inherit', cwd: __dirname });
+          } catch (err) {
+            console.error('Error running npm build:', err);
+            process.exit(1);
+          }
 
-  async function generatePDF(url, outputPath) {
-    const browser = await puppeteer.launch({
-      args: [
-        '--disable-web-security', // Disables CORS and other web security features
-        '--user-data-dir=/tmp/puppeteer_temp', // Required to avoid profile conflicts
-        '--no-sandbox',
-        '--disable-setuid-sandbox'
-      ],
-    });
-    const page = await browser.newPage();
-    await page.goto(url);
-    await page.waitForFunction(() => {
-      const imgs = Array.from(document.images);
-      return imgs.length === 0 || imgs.every(img => img.complete);
-    });
-    await page.pdf({ path: outputPath, format: 'A4', printBackground: true, scale: 1.22 });
-    await browser.close();
-  }
+          const markup = `file://${__dirname}/index.html`
+          const output = `${process.cwd()}/resume.pdf`;
 
-  generatePDF(markup, output)
-    .then(() => console.log(`PDF generated successfully: ${output}`))
-    .catch(err => console.error('Error generating PDF:', err));
-    //process.env.NODE_ENV = 'development'; // enable during development
-}).catch(err => {
-  console.error('Error generating resume:', err);
-  process.exit(1);
-});
+          generatePDF(markup, output)
+            .then(() => console.log(chalk.greenBright(`PDF generated successfully: ${output}`)))
+            .catch(err => console.error('Error generating PDF:', err));
+            //process.env.NODE_ENV = 'development'; // enable during development
+        }).catch(err => {
+          console.error('Error generating resume:', err);
+          process.exit(1);
+        });
+      } catch (err) {
+        console.error('Error generating resume:', err);
+        process.exit(1);
+      }
+    }
+  );
+
+program.parse();

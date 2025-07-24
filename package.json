@@ -1,6 +1,6 @@
 {
   "name": "resumeagen",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "LLM powered resume generator",
   "type": "module",
   "main": "index.js",
@@ -8,6 +8,7 @@
     "resumeagen": "./resumeagen.js"
   },
   "scripts": {
+    "dev-build": "NODE_ENV=development rollup -c",
     "build": "NODE_ENV=production rollup -c",
     "start": "NODE_ENV=development rollup -c --watch"
   },

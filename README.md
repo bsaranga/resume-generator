@@ -43,9 +43,10 @@ Run `npm install resumeagen`
 - Update the files in the `data/` directory (e.g., `header.json`, `context.json`, `job_description.md`) to customize your resume content.
 - You can also modify templates in `src/` and `src/components/` for layout and style changes.
 
+
 #### 2. Generate a Resume (CLI Usage)
 
-To generate a resume using the command-line interface, use the following command:
+To generate a resume using the command-line interface, use:
 
 ```bash
 node resumeagen.js generate <contextPath> <jobDescriptionPath>
@@ -55,6 +56,22 @@ node resumeagen.js generate <contextPath> <jobDescriptionPath>
 - `<jobDescriptionPath>`: Path to your job description file (e.g., `data/job_description.md`)
 
 This will generate a new resume and output a PDF (`resume.pdf`) in your current directory.
+
+#### 3. Regenerate PDF Only (CLI Usage)
+
+If you have already generated your resume and want to tweak or regenerate the PDF (for example, after editing `resume.mdx` or making layout changes), use:
+
+```bash
+node ./resumeagen.js regen-pdf
+```
+
+You can also specify a custom scale factor for the PDF:
+
+```bash
+node ./resumeagen.js regen-pdf --scale 1.5
+```
+
+This will regenerate `resume.pdf` from the current HTML output.
 
 #### 3. Development Workflow
 

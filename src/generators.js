@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer';
 
-async function generatePDF(url, outputPath) {
+async function generatePDF(url, outputPath, scale = 1.332) {
   const browser = await puppeteer.launch({
     args: [
       '--disable-web-security', // Disables CORS and other web security features
@@ -15,7 +15,7 @@ async function generatePDF(url, outputPath) {
     const imgs = Array.from(document.images);
     return imgs.length === 0 || imgs.every(img => img.complete);
   });
-  await page.pdf({ path: outputPath, format: 'A4', printBackground: true, scale: 1.22 });
+  await page.pdf({ path: outputPath, format: 'A4', printBackground: true, scale: scale });
   await browser.close();
 }
 

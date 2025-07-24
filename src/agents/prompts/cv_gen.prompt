@@ -19,9 +19,9 @@ Use the following information as context of the applicant to fill out the resume
 %APPLICANT_CONTEXT%
 ```
 
-Use the following job description to tailor the resume. Transform the applicant information in
-such a way that it guarantees a short-selection. Be clever and use appropriate phrasing that elevates the candidate
-and makes the candidate appear as a best fit.
+Use the following job description to tailor the resume. In order to write the resume sections, select the best applicant information in
+such a way that it stands out to the recruiter. Be clever and use appropriate phrasing that makes the candidate a best fit for the
+given job description.
 
 ```job description
 %JOB_DESCRIPTION%
@@ -29,7 +29,6 @@ and makes the candidate appear as a best fit.
 
 IMPORTANT:
 1. Keep the "About" section concise and to the point.
-2. Use the most relevant selection of technical skills from the given applicant context.
-3. Summarize each work experience to 3 points highlighting the most important contributions.
-4. Feel free to tweak the phrasing of work experience details to tailor the job description.
-5. Use good ATS-friendly keywords when describing my work-experience.
+2. Summarize each work experience to 3 points highlighting the most important contributions.
+3. Feel free to tweak the phrasing of work experience details to tailor the job description.
+4. Use good ATS-friendly keywords when describing my work-experience.

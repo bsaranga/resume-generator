@@ -6,11 +6,12 @@
         "applicant_summary": "Highly experienced full-stack senior developer with 6 years of experience in .NET, C#, and Angular. Proven track record in delivering high-quality software solutions and leading development teams. Strong problem-solving skills and a passion for technology. Language agnostic mindset that enables quick adaptation to new technologies and frameworks. Expertise in building scalable web applications and RESTful APIs. Excellent communication skills and a team player who thrives in collaborative environments. Advocate of test driven development and agile methodologies. Firm believer of the product engineering manifesto, and a contributor to the product engineering repository."
     },
     "technical_skills": {
-        "programming_languages": ["C#", "JavaScript", "TypeScript", "Python", "Java", "SQL(T-SQL, P-SQL)", "C", "C++"],
+        "programming_languages": ["C#", "JavaScript", "TypeScript", "Python", "SQL(T-SQL, P-SQL)", "C", "C++"],
         "frameworks_and_technologies": [".NET", ".NET Core", "ASP.NET", "Angular", "React", "Node.js", "Express.js", "Fast API", "Vue.js", "NestJS", "Next.js", "ASP.NET CORE", "Entity Framework", "GraphQL", "RESTful APIs"],
         "databases": ["SQL Server", "PostgreSQL", "MySQL", "MongoDB", "Redis", "Neo4j"],
-        "tools_and_technologies": ["Docker", "Kubernetes", "Git", "Jenkins", "Azure DevOps", "AWS", "GCP", "Terraform", "GraphQL", "RESTful APIs", "Microservices", "CI/CD", "Agile methodologies", "Scrum", "Kanban", "Test Driven Development (TDD)", "Behavior Driven Development (BDD)", "Unit Testing", "Integration Testing", "End-to-End Testing"],
-        "cloud_platforms": ["AWS", "Azure", "Google Cloud Platform (GCP)"]
+        "tools_and_technologies": ["Docker", "Git", "Azure DevOps", "Terraform"],
+        "cloud_platforms": ["AWS", "Azure", "Google Cloud Platform (GCP)"],
+        "practices": ["Agile", "Scrum", "Test Driven Development (TDD)", "Behavior Driven Development (BDD)"]
     },
     "work_experience": [
         {
@@ -84,6 +85,16 @@
             "title": "Contributor for the Product Engineering Manifesto",
             "description": "A manifesto advocating for product engineering principles, emphasizing quality and collaboration.",
             "link": "https://github.com/anttiviljami/product-engineer-manifesto"
+        },
+        {
+            "title": "Resumeagen",
+            "description": "An LLM-powered resume generator that simplifies the process of creating professional resumes.",
+            "link": "https://github.com/bsaranga/resumeagen"
+        },
+        {
+            "title": "InMemGraph DB",
+            "description": "A lightweight in-memory graph database written in C for educational purposes",
+            "link": "https://github.com/bsaranga/inmemgraph"
         }
     ],
     "continuous_education": [

@@ -26,7 +26,8 @@ export async function generateResume(contextPath = null, jobDescriptionPath = nu
   const client = new OpenAI();
 
   const stream = await client.chat.completions.stream({
-    model: 'gpt-4.1-mini',
+    model: 'gpt-4.1',
+    temperature: 0,
     messages: [
       { role: 'system', content: "You're a resume generator that writes an optimized resume for a given job description and candidate context. You use a flavor of markdown and jsx, also known as MDX." },
       { role: 'user', content: prompt }

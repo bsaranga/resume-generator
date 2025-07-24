@@ -59,4 +59,21 @@ program
     }
   );
 
+program
+  .command('regen-pdf')
+  .description('Regenerate the PDF from the existing resume.mdx file. Use this for personal tweaks.')
+  .option('-s, --scale <FLOAT>', 'Scale factor for the PDF', '1.332')
+  .action(async (options) => {
+    const doc_scale = parseFloat(options.scale);
+    const markup = `file://${__dirname}/index.html`
+    const output = `${process.cwd()}/resume.pdf`;
+    try {
+      await generatePDF(markup, output, doc_scale);
+      console.log(chalk.greenBright(`PDF regenerated successfully: ${output}`));
+    } catch (err) {
+      console.error('Error regenerating PDF:', err);
+      process.exit(1);
+    }
+  })
+
 program.parse();

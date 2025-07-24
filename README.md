@@ -48,7 +48,7 @@ Run `npm install resumeagen`
 To generate a resume using the command-line interface, use the following command:
 
 ```bash
-npx ./resumeagen.js generate <contextPath> <jobDescriptionPath>
+node resumeagen.js generate <contextPath> <jobDescriptionPath>
 ```
 
 - `<contextPath>`: Path to your context file (e.g., `data/context.json`)

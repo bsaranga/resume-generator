@@ -16,6 +16,10 @@ This is a resume generator application that allows you to generate a professiona
 
 - Node.js (v16 or higher recommended)
 - npm (comes with Node.js)
+- OPENAI_API_KEY should be set in environment variables
+
+### Direct Installation (Have bugs, use the other installation route)
+Run `npm install resumeagen`
 
 ### Installation
 
@@ -62,7 +66,7 @@ During development, you may want to build or preview the resume manually:
   npm run build
   ```
 
-- To start a development server (if configured):
+- To start bundle watch:
 
   ```bash
   npm start

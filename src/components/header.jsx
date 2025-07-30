@@ -10,7 +10,9 @@ export default function Header() {
         <div className='flex gap-1 text-xs'>
           <a href={data.website}>{data.website}</a> |
           <a href={`mailto:${data.email}`}>{data.email}</a> |
-          <div>{data.phone}</div>
+          <a href={data.github}>My Github</a> |
+          <a href={data.linkedIn}>LinkedIn</a> |
+          <a href="https://wa.me/94775008271">0775008271</a>
         </div>
         <div className='text-xs'>{data.address}</div>
       </div>
